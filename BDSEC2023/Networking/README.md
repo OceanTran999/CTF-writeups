@@ -28,19 +28,24 @@ In this challenge, I also used HTTP packets to find the path.
 Flag: ```BDSEC{/app/admin_panel}```
 
 # Compromised Account
-![Chal](https://github.com/OceanTran999/CTF-write![Uploading fake_ans.png…]()
+
+![Chal](https://github.com/OceanTran999/CTF-writeups/assets/100577019/18aeb44a-c72c-4e04-a6f9-eafded61245a)
+
 
 Sadly, I couldn't solve this challenge so I decided to solve it after the competition.
 At first, I thought this was an easy challenge. But nahhh, I was faked by this account.
 
 ![fake_ans](https://github.com/OceanTran999/CTF-writeups/assets/100577019/4f7c16d9-5395-4858-9814-bc1a3099df04)
 
+
 I asked in Discord and luckily, a good member helped me.
 
 ![discord_help](https://github.com/OceanTran999/CTF-writeups/assets/100577019/14ba9a81-a3c2-48d8-985a-db67ff367386)
 
+
 Therefore, I tried to find the packet which had "Login successful"
 
 ![find_packet](https://github.com/OceanTran999/CTF-writeups/assets/100577019/36c3839d-e4f8-4048-bf94-2295f2e1de34)
+
 
 Flag: ```BDSEC{tareq@gmail.com_tareq@nanomate}```
