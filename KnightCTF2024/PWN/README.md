@@ -1,49 +1,49 @@
 # Get the sword
 
-![Chal](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/58ebf417-c481-4dd5-8ea2-7924605ba4d2)
+![Chal](https://github.com/user-attachments/assets/f1e99dce-dbae-4989-86d0-eff91baf7c9c)
 
 
 Here's the protection of this file
 
-![Checksec](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/cd927a4a-3692-4514-81f4-9c184fb79698)
+![Checksec](https://github.com/user-attachments/assets/652ac2af-cdc7-4dc0-9c49-c33255263258)
 
 
 Here's the function that we can input.
 
-![intro_func](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/6a7433a3-462b-4abf-a0f2-ae935020c8a5)
+![intro_func](https://github.com/user-attachments/assets/fed577a6-df93-424e-a6e2-57da12bb16cb)
 
 
 In this challenge, the `win function` is `getSword()`.
 
-![Win_func](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/14ea1790-72e8-40cb-86e2-d7736c0f0835)
+![Win_func](https://github.com/user-attachments/assets/1434d88c-ef26-4d28-b5cb-b1f0c79d0ac7)
 
 
 The input function uses the `scanf` with `%s` format string, which we can easy use buffer overflow attack because `scanf` reads until it receives the null byte.
 
-![format_s](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/53e2c5e7-82ba-4eee-aafb-88d97818e314)
+![format_s](https://github.com/user-attachments/assets/456eb8ff-44d5-4cd6-9a22-113cd018478d)
 
 
 So here's the stack I draw for this challenge.
 
-![stack](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/bf3b9979-c2dd-4845-ace7-9447c8ee0ceb)
+![stack](https://github.com/user-attachments/assets/24e9de87-b5f6-4e02-84da-089337741e0f)
 
 
 Now we just need the address of the `win` function to get the flag
 
-![win_addr](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/310b4c17-a3a7-4a5b-ae02-836dfec10d7d)
+![win_addr](https://github.com/user-attachments/assets/01d852f5-a7ad-4f29-ad72-77fa92f0c877)
 
 
-![flag](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/91dea3af-4d03-4864-8044-efb8fe58895f)
+![flag](https://github.com/user-attachments/assets/6bf5d3e4-bf19-433d-9b1a-289910ff5483)
 
 
 # Dragon Secret Scroll
 
-![Chal](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/151509c8-c4a5-47ac-ae4d-7013fc4fde17)
+![Chal](https://github.com/user-attachments/assets/ed859a27-c6e7-44e1-b8f0-2b556b3171da)
 
 
 In this challenge, it doesn't give me the binary file to exploit in local. Therefore I have to exploit directly in the remote server. The simplest technique I think to solve this challenge is format string vulnerability, so I try to test the input to see if it really works with the format string attack.
 
-![Test_formatstr](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/8cfbcbf2-07a5-4b2d-9eb9-2eda34bbd422)
+![Test_formatstr](https://github.com/user-attachments/assets/59fe449a-f3bc-4aa7-8a62-01b288bd43ca)
 
 
 Yeah :) It really has format string vulnerability. Now, the format of the flag is `KCTF{flag}`, which in ASCII will be:
@@ -56,46 +56,46 @@ Yeah :) It really has format string vulnerability. Now, the format of the flag i
 
 So, I will find the position of output to see if there're hex values of this. Remember for the little endian.
 
-![flag_position](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/5613367b-18b9-4736-a9c7-b658d02012b9)
+![flag_position](https://github.com/user-attachments/assets/208ce68f-8ef0-429a-a224-c105aaee2b13)
 
 
 Great!!! It's in the 6th position of output. Copy and paste to the Hex to String Converter online, this is the flag. So I just write the script to convert to these hex values into big endian and get the flag.
 
-![hex_to_str](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/c71424c8-fefd-4dc7-9860-6a1e555dd60b)
+![hex_to_str](https://github.com/user-attachments/assets/88699867-463f-4693-ac09-f9927ec7d25b)
 
 
-![convert_little_end](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/8ecad809-93b3-47dd-a19c-f7fdaf1fa2c8)
+![convert_little_end](https://github.com/user-attachments/assets/cb9f4daa-75e7-42dc-9c4c-fdeb71e14147)
 
 
-![Flag](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/b1158b2b-11ef-4895-b75e-1a56ad30b750)
+![Flag](https://github.com/user-attachments/assets/31ef82b9-58d8-47c9-b814-5c7b0f11b13b)
 
 
 # win...win...Windows
 
-![Chal](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/d1808009-e4cd-4a98-b206-b1ede64ff3a1)
+![Chal](https://github.com/user-attachments/assets/982ed3b7-855b-49f2-b63a-f0b9a7ab1884)
 
 
-![checksec](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/28b8fc8a-b820-49b9-8a80-f3ce1007b18e)
+![checksec](https://github.com/user-attachments/assets/bc048373-45ea-4845-bb75-c94ed9a60170)
 
 
 The excutable file only has NX flag, which we can't execute the shell in the stack. In the `main()`, we see there's a vulnerability due to the `get()`, which can occur buffer overflow attack.
 
-![main_func](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/a95c8a43-dd14-49a4-84a0-bd7c0d3168fc)
+![main_func](https://github.com/user-attachments/assets/cbb5fe5c-b886-48b9-87d9-f8bf21de5f94)
 
 
 The `win` function will give the shell for us. Now we need to make the program point to it.
 
-![win_func](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/fca89470-a0c3-4f8a-9ac0-0bb41adc1ede)
+![win_func](https://github.com/user-attachments/assets/ff28e372-1645-47a2-9718-94df26bc216d)
 
 
 We can use buffer overflow attack to redirect to the win function. First we need to know the address of the `win`.
 
-![win_addr](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/51fde572-1b7b-4fbc-87c4-a4eaec3138e9)
+![win_addr](https://github.com/user-attachments/assets/6f813ac0-5502-490d-86dc-e0e292d3d78c)
 
 
 Finally, draw the stack and get the flag.
 
-![stack](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/0c297c8c-ec91-448f-a642-248dc6b78f3f)
+![stack](https://github.com/user-attachments/assets/58a85e74-48ec-49b9-b84a-652295a4925e)
 
 
-![Flag](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/6ae216c0-2724-4504-b574-5984f0929205)
+![Flag](https://github.com/user-attachments/assets/631d27bf-ddb1-4c1f-8ccc-23898d841883)
