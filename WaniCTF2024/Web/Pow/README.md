@@ -1,38 +1,38 @@
 **I didn't solve this challenge during the competition, after asking for some good players after CTF, I decide to solve it again.**
 
-![Chal](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/eb0608af-8f31-49cb-9387-180d5d809557)
+![Chal](https://github.com/user-attachments/assets/1b1e0f43-aabf-4220-b3d9-f33325334fd0)
 
 
 At first I thought I have to calculate the hash in `.js` files to get the flag LOL :) .
 
-![Burp2](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/6796f6eb-59b6-44b2-a213-456b2dbea866)
+![Burp2](https://github.com/user-attachments/assets/d8beb40c-6db6-40e9-bcef-0f06472e0758)
 
 
 Using `Burp Suite`, we can see that the HTTP request has `pow_session=eyJhbGc....` in `Cookie` and an array which has `["52592778"]`, you can take another values when the server sends you.
 
-![Burp3](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/1dfe53d6-5b53-4f15-b0d2-6602d0a8a58d)
+![Burp3](https://github.com/user-attachments/assets/97e8150b-aaf8-48bc-8bc7-4ce58dd77762)
 
 
 And when you receive the request, the value of **Server response** will be `progress: 1/1000000`.
 
-![Check_Burp3](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/c8c242e6-c0fc-4498-b32d-38bbf6acbd37)
+![Check_Burp3](https://github.com/user-attachments/assets/3f70133d-fc1d-4495-9bce-a2769a04f83e)
 
 
 Therefore, whatif we increase the number of elements, what will happen?
 
-![Burp4](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/8df042b3-e540-43b1-86c6-27d789f6c0d1)
+![Burp4](https://github.com/user-attachments/assets/1791656f-3033-4e98-84ef-e4fe63f75192)
 
 
 The answer is the value will be **increase** too when we send to server.
 
-![Checck_Burp4](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/9e77c91d-cb96-4936-a493-02072d992d67)
+![Checck_Burp4](https://github.com/user-attachments/assets/e061250d-1a34-40a5-a3a1-e167f61fb1b6)
 
 
 So I will write Python script and send to the server with an array has `1000000` elements.
 
-![Error](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/ab3a93a8-01dd-4952-bffd-26226b61677f)
+![Error](https://github.com/user-attachments/assets/6b358608-ba9b-40f5-8802-f5835908a7f8)
 
 
 And it seems that the server they limit the number of elements in an array, therefore we have to decrease them. After trying, the `10000` elements will be suitable to exploit. Finally, you just need to run the script several times until you get the flag.
 
-![Flag](https://github.com/OceanTran999/WaniCTF2024/assets/100577019/4f67b2c9-4e36-4b2f-9c72-cb30fa314dda)
+![Flag](https://github.com/user-attachments/assets/9da4d520-a12b-4977-9454-e22b4e8aa7b6)
