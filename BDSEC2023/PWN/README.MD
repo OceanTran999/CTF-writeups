@@ -4,9 +4,6 @@ First, let's see type of file, I saw this is ELF32 file.
 ![readelf](https://github.com/user-attachments/assets/336a2ee3-efa4-497b-a222-65cbcc6ed7a2)
 
 
-![disassem_vuln](https://github.com/user-attachments/assets/f427b591-8ae3-4029-98bf-0fc1e2a787d0)
-
-
 Therefore, I would use IDAPro 32-bits to see the full source code of this file. And here is `main()` and `vuln()`:
 
 ![mainFunc](https://github.com/user-attachments/assets/b27fc834-3d34-4cb7-9094-52f18149c4fa)
@@ -18,6 +15,8 @@ Then I checked the protection of this file. As the result, the file had no prote
 ![checksec](https://github.com/user-attachments/assets/409710c4-6efe-47eb-bf53-41046fa58950)
 
 Next, we will `disassemble vuln`:
+![disassem_vuln](https://github.com/user-attachments/assets/f427b591-8ae3-4029-98bf-0fc1e2a787d0)
+
 
 I suddenly saw `mov  DWORD PTR [ebp - 0xc], 0x123456678`. Therefore I considered that the address of variable "v1" will be `ebp-0xc`
 
@@ -44,32 +43,35 @@ _**Sadly :( these 2 beneath challenges I didn't have time to solve, but I was ab
 # callme
 Type of file:
 
-![readelf](https://github.com/OceanTran999/BDSEC2023/assets/100577019/14100d70-606b-4331-ae17-f14e0dc80ef1)
+![readelf](https://github.com/user-attachments/assets/ff813451-c6b1-4b2a-bb58-12b7b6896759)
 
 Used IDAPro 32-bits, I got source code. Here's the `main()` function
 
-![mainFunc](https://github.com/OceanTran999/BDSEC2023/assets/100577019/29dc3b4e-8dda-4b1e-aa8b-2fff2a1f5315)
+![mainFunc](https://github.com/user-attachments/assets/2747d934-e0ad-4e2e-842b-057858015614)
 
-![mainFunc_2](https://github.com/OceanTran999/BDSEC2023/assets/100577019/ac73c539-6663-4f6a-bce5-bf000248f979)
+![mainFunc_2](https://github.com/user-attachments/assets/f8f9acaa-c3b2-48a8-86e3-fedfc7601bf0)
 
 Check the file's protection:
 
-![checksec](https://github.com/OceanTran999/BDSEC2023/assets/100577019/17145c7f-74be-4cf7-b857-c82d3f757cbd)
+![checksec](https://github.com/user-attachments/assets/ed1a0053-c701-42b4-802f-bfc6fc9a3fa0)
 
 Then I `disassemble main`. And did as same as the _**AnyaForger**_ challenge
+![diassem_main](https://github.com/user-attachments/assets/2e8ad733-3591-47ba-97cf-6565c187ea7c)
 
-![scanf](https://github.com/OceanTran999/BDSEC2023/assets/100577019/a1a971a5-f7cd-4e32-bf75-4c6d16575eff)
 
-![test](https://github.com/OceanTran999/BDSEC2023/assets/100577019/28534e8a-e256-4c2e-bd83-ebf53d9355b5)
+![scanf](https://github.com/user-attachments/assets/74792e59-5682-4847-8b80-dff9d2a74496)
+
+
+![test](https://github.com/user-attachments/assets/84968c5b-d7d5-45ee-a1ce-5cbefac26682)
+
 
 Finally, I got stack like this:
 
-![stack](https://github.com/OceanTran999/BDSEC2023/assets/100577019/a4bd7ee6-2f51-41e3-96f7-49dd9b2d777e)
-28)
+![stack](https://github.com/user-attachments/assets/9da01994-5e44-41ba-a110-635d51fd6937)
 
 Booom!!!! I got the flag. EZPZ
 
-![flag](https://github.com/OceanTran999/BDSEC2023/assets/100577019/613dc8b6-1cb0-4654-b3b6-425f2e57ce61)
+![flag](https://github.com/user-attachments/assets/4554278c-7d0b-4b25-8dab-aa3a3d73b510)
 
 
 # ghost
