@@ -1,16 +1,16 @@
 # Levi Ackerman
 
-![chal](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/6b81e0ed-7c2a-46d8-85a6-ec6a5538cf70)
+![chal](https://github.com/user-attachments/assets/0bc6c691-fa00-46d5-9104-03a628d32265)
 
 
-![Access_Web](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/ba160b75-7676-4bc4-82c9-1be4b3c0c0e5)
+![Access_Web](https://github.com/user-attachments/assets/e503a6ef-ab21-486e-8883-c1b80fb6a328)
 
 
 In this challenge, the word `robot` make me think about the file `robots.txt`. Therefore, I try to access this directory to see if there's any information to get the flag.
 
-![robots](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/afc2c25d-3ba9-44be-bcf3-9fb8975c752b)
+![robots](https://github.com/user-attachments/assets/6a4e9e82-7cec-48fb-8493-95f15f9ba27f)
 
 
 The website mentions about the `/l3v1_4ck3rm4n.html`, so I direct to it and here's the flag.
 
-![flag](https://github.com/OceanTran999/KnightCTF2024/assets/100577019/1dcfe05b-f7df-4805-9eba-cbee51bbd581)
+![flag](https://github.com/user-attachments/assets/e81ab802-2b63-4a3e-98b6-ce1a5ed990a5)
