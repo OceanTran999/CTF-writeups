@@ -11,7 +11,11 @@ When seeing the `hook` in the name of challenge, it reminds me about the overwri
 
 # Final solution
 Firstly, to make the local exploit same as remote exploit, I just know that the `pwninit` tool can do that.
-So asking in the discord with my nubbie question, I understand that we have to use `malloc_consolidate()`, which we will overwrite the list of `tcache_bins`, which has only 7 elements with size of chunks **more than 0x90** and `malloc()` again to make unsorted bin. So yeah, after doing that and use `pwndbg`, I see that it leaks the address in the `libc`, calculate the offset we will have the address of libc base.
+So asking in the discord with my nubbie question, I understand that we have to use `malloc_consolidate()`, which we will overwrite the list of `tcache_bins`, which has only 7 elements with size of chunks **more than 0x90** and `malloc()` again to make unsorted bin.
+![discord_help](https://github.com/user-attachments/assets/01008f47-580b-443c-8c50-baf6090c9a27)
+
+
+So yeah, after doing that and use `pwndbg`, I see that it leaks the address in the `libc`, calculate the offset we will have the address of libc base.
 
 ![vmmap](https://github.com/user-attachments/assets/b3a16107-2110-4232-9de7-37d4cabe4cba)
 
