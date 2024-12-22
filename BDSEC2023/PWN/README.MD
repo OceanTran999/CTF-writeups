@@ -77,20 +77,20 @@ Booom!!!! I got the flag. EZPZ
 # ghost
 Here we got the protections
 
-![checksec](https://github.com/OceanTran999/BDSEC2023/assets/100577019/95a55e00-77cb-4ffc-93b0-ff124bff389c)
+![checksec](https://github.com/user-attachments/assets/12028f2a-9032-45b5-ab5e-f9db4aeca292)
 
 Then I check the type of file and it is the ELF 64-bits
 
-![readelf](https://github.com/OceanTran999/BDSEC2023/assets/100577019/caae748c-65d1-4013-b630-e4f446faaeab)
+![readelf](https://github.com/user-attachments/assets/8c3e52c3-2028-43d7-83b5-c34c09e2a5c3)
 
 Therefore, I had to use IDAPro 64-bits to observe the source code. Here's the `main()` function:
 
-![SourceCode](https://github.com/OceanTran999/BDSEC2023/assets/100577019/dd192010-f14a-41b7-b718-aa4505717fd8)
+![SourceCode](https://github.com/user-attachments/assets/d1a497e4-4a90-4675-bb92-92bb6fb29b21)
 
 Did as same as those 2 above challenges. I got the stack like this:
 
-![stack](https://github.com/OceanTran999/BDSEC2023/assets/100577019/5062f22a-2f55-4ed2-a6cb-b410f8c5e760)
+![stack](https://github.com/user-attachments/assets/abd59cb6-558b-4e17-b5e6-b9bb3b24d9ec)
 
 Finally, submit to server and I got the flag. Yayyyyy :D
 
-![Flag](https://github.com/OceanTran999/BDSEC2023/assets/100577019/2092c5d6-660f-40ec-8a7c-7990fa790604)
+![Flag](https://github.com/user-attachments/assets/d8dd3efd-8290-4043-ad3e-cc66ba8dbf9c)
