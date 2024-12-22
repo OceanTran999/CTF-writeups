@@ -7,6 +7,10 @@ With `checksec` we can see that the binary file has all protection, it seems a v
 
 However, when reading the given source code, I realize that there's a buffer overflow vulnerability because the `ingredient[3]` has only 3 elements, while the `for` loop it gives 4 elements. Also, this challenge is `ret2win`, which gives us the address of flag function.
 
+
+![Code](https://github.com/user-attachments/assets/fd6a58ab-aace-4fd7-a0bd-465446648670)
+
+
 ![canary_detected](https://github.com/user-attachments/assets/e8e6f535-f7f5-4f14-90b9-acd529b721e7)
 
 
