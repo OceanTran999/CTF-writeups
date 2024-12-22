@@ -7,6 +7,7 @@ This challenge only has `NX` protection which we can't execute the shellcode in 
 
 
 During reconnaissancing and debugging the binary, I saw that after giving the input, the `$RAX` register will be equal to the `<size_of_input> + 1`.
+
 ![input_and_RAX](https://github.com/user-attachments/assets/abab8f65-c5ac-4d5f-994b-e735d4209aed)
 
 
