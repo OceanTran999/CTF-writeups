@@ -1,0 +1,1 @@
+In this challenge, to win the game, I use `Burp` to modify the HTTP Response from the server. But after winning the game I don't know to do next... I tried to find more subdirectories but doesn't work. So when the competition is over, I realize that I have to win the game 100 times to get the flag :)
