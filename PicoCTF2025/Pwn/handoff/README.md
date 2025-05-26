@@ -19,7 +19,7 @@ Also, we have 32 bytes input in choice `2`, which we can put the shellcode in th
 ![code](https://github.com/user-attachments/assets/955321e3-9681-4db4-a9d5-3b6f0e677348)
 
 
-When we input before exiting, using `gdb`, we see that the value of `$rax` always point to the first address of our input, so we will find the gadgets that relate to `$rax`. The `jmp $rax` is the suitable one. Therefore, the idea is we will create some assembly codes that make the `$rsp` point to the variable contents shellcode, put it in the first input before exiting, and use the gadget `jmp $rax` to make `$rsp` point to our assembly code, finally point to the shellcode and get the shell.
+When we input before exiting, using `gdb`, we see that the value of `$rax` always point to the first address of our input, so we will find the gadgets that relate to `$rax`. The `jmp $rax` is the suitable one. Therefore, the idea is we will create some assembly codes that make the `$rsp` point to the variable that contents shellcode. To run these assembly codes, we have to put them in the first input of choice `3` and use the gadget `jmp $rax` to make `$rsp` point to our assembly code, and finally point to the shellcode to get the shell.
 
 ![gdb](https://github.com/user-attachments/assets/ffeca99b-12af-4a15-b140-e47aaf54b8b5)
 
