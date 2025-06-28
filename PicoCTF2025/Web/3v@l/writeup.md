@@ -1,4 +1,4 @@
-** I did not solve during the competition due to lack of time :(
+## I did not solve during the competition due to lack of time :(
 
 ![chall](https://github.com/user-attachments/assets/71648089-1dd6-4015-b11b-7ec5942bd0a0)
 
