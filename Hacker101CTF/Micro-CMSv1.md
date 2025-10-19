@@ -28,7 +28,7 @@ Next, I try to create my own Markdown website.
 <img width="624" height="355" alt="createpage" src="https://github.com/user-attachments/assets/3aaa8511-4b69-4ebc-a75b-0c7f0eafa587" />
 
 
-Looking at the content box, I know this must be the `XSS attack`. I try to test the input with alphabetic, numberic and special character `<`, `>`.
+Looking at the content box, I know this must have the `XSS attack` vulnerability. I try to test the input with alphabetic, numberic and special character `<`, `>`.
 
 <img width="624" height="248" alt="source_createpage" src="https://github.com/user-attachments/assets/d65af315-48b2-489c-b917-e420318be1d0" />
 
@@ -46,11 +46,11 @@ And problem solved, our attack is executed successfully.
 <img width="624" height="118" alt="xss__ok" src="https://github.com/user-attachments/assets/1e245f8f-1b6f-41ff-98b1-f36e2c9d3986" />
 
 
-I think there must be a box in this challenge, but when seeing this is an easy challenge, I think I don't have to do this part, so after finding, I see the flag in the source code. XD
+I think there must be a clicking BOT🤖 in this challenge, using XSS to leaking data, information of this BOT and find the flag? But when seeing this is an easy challenge, I think I don't have to do this part, so after reconnaissance, I see the flag in the webpage's source code. XD
 
 <img width="624" height="172" alt="flag2" src="https://github.com/user-attachments/assets/a29de425-ae24-4d39-adbf-e7dce9473a57" />
 
 
-And don't know why when I redirect to the Home page, I also get the flag XD. Double flag in 1 exploit.
+And don't know how, when I redirect to the Home page, I also get the flag XD. Double flag in 1 exploit.
 
 <img width="624" height="111" alt="flag3" src="https://github.com/user-attachments/assets/7a2fcca4-d7a4-4167-81d2-87ed03447f33" />
